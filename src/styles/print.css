@@ -1,0 +1,54 @@
+/* Print styles for chat export */
+
+@media print {
+  /* Hide elements that shouldn't be printed */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Only show the chat content */
+  .print-container,
+  .print-container * {
+    visibility: visible;
+  }
+  
+  /* Position the printable content at the top of the page */
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Hide reaction buttons and sources */
+  .message-reactions,
+  .sources-button {
+    display: none !important;
+  }
+  
+  /* Ensure proper page breaks */
+  .chat-message {
+    page-break-inside: avoid;
+  }
+  
+  /* Adjust spacing for print */
+  .chat-message-container {
+    margin-bottom: 1rem;
+  }
+  
+  /* Make sure text is black for better printing */
+  .chat-message-text {
+    color: #000 !important;
+  }
+  
+  /* Ensure chat bubbles have borders for definition */
+  .chat-bubble {
+    border: 1px solid #ddd;
+  }
+  
+  /* Hide non-essential UI elements */
+  .chat-input-container,
+  .chat-controls {
+    display: none !important;
+  }
+}
